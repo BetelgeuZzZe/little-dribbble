@@ -15,6 +15,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  flex-wrap: nowrap;
   align-items: center;
   height: 70px;
   padding: 17px 15px;
