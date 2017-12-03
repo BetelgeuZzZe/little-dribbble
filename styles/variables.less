@@ -1,0 +1,25 @@
+/*  MEDIA BREAKPOINTS  */
+@desktop: ~"(min-width: 769px)";
+@tablet: ~"(min-width: 426px) and (max-width: 768px)";
+@mobile: ~"(max-width: 425px)";
+
+@TopBarHeight: 70px;
+
+/* flex */
+.flex(column; @justify: center) {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: @justify;
+}
+
+.flex(row; @justify: space-between) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: @justify;
+}
+
+/* COLORS */
+@white: #ffffff;
+@black: #000000;

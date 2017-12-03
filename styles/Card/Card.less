@@ -1,0 +1,79 @@
+@import '../variables';
+
+.labels() {
+  opacity: 0.7;
+  background-color: #333333;
+  color: @white;
+}
+
+.card {
+  padding: 12px 12px 15px;
+
+  background-color: @white;
+  box-shadow: 0 0 15.8px 0.2px rgba(0, 0, 0, 0.13);
+
+  width: 290px;
+
+  @media screen and @tablet {
+    width: 338px;
+  }
+
+  @media screen and @desktop {
+    width: 275px;
+  }
+
+  cursor: pointer;
+
+  &__image {
+    position: relative;
+    height: 182px;
+    overflow: hidden;
+    img {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  &__info_handler {
+    .flex(row);
+    padding-top: 16px;
+    align-items: baseline;
+  }
+
+  &__name {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 0.7;
+    color: @black;
+  }
+
+  &__image_label {
+    .labels;
+    padding: 8px 11px;
+    font-size: 14px;
+    line-height: 0.8;
+    display: inline;
+    position: absolute;
+  }
+
+  &__hover_label {
+    .labels;
+    padding: 10px 11px;
+
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.1;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -100%;
+    transition: bottom 0.3s ease-out;
+  }
+
+  &:hover {
+    .card__hover_label {
+      bottom: 0;
+    }
+  }
+}
