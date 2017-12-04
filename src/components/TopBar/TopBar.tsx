@@ -1,4 +1,6 @@
 import * as React from 'react';
+import * as styles from './styles/TopBar.less';
+
 const items = [
   'Shots',
   'Designers',
@@ -8,21 +10,22 @@ const items = [
   'Jobs',
   'Hiring'
 ];
+
 export class TopBar extends React.PureComponent  {
   render() {
     return(
-      <div className="topbar">
-        <div className="topbar__logo">
+      <div className={styles.topbar}>
+        <div className={styles.logo}>
           <img src="/logo.png" alt=""/>
         </div>
-        <div className="topbar__desktop">
+        <div className={styles.full_menu}>
           {items.map((item) => (
-            <div key={item} className="topbar__item">
+            <div key={item} className={styles.item}>
               {item}
             </div>
           ))}
         </div>
-        <div className="topbar__menu">
+        <div className={styles.menu}>
           <img src="/menu.png" alt=""/>
         </div>
       </div>

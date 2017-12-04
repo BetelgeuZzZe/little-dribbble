@@ -4,6 +4,7 @@ import ShotsStore, { IShotsStoreState } from '../../stores/ShotsStore';
 import { Container }                    from 'flux/utils';
 import ShotsActions                     from '../../actions/ShotsActions';
 import { Card }                         from '../Card/Card';
+import { Grid, Column }                 from '../Grid/Grid';
 
 interface ICardsContainerState {
   cards: Array<IShotsStoreState>;
@@ -34,13 +35,13 @@ class Cards extends React.Component<{}, ICardsContainerState> {
 
   render() {
     return(
-      <div className="grid">
+      <Grid>
         {this.state.cards.map((card: IShotsStoreState) => (
-          <div key={card.id} className="grid__column">
+          <Column key={card.id}>
             <Card {...card} onClick={ShotsActions.pickCard}/>
-          </div>
+          </Column>
         ))}
-      </div>
+      </Grid>
     );
   }
 

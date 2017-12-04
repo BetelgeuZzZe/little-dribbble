@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as styles from './styles/TinyInfo.less';
 
 export interface IIConsProps {
   content: string | number;
@@ -7,9 +8,9 @@ export interface IIConsProps {
 
 export function Icons(props: IIConsProps) {
   return(
-    <span className="tiny_info__icon">
+    <span className={styles.icon}>
       {props.icon && <i className={`fa fa-${props.icon}`} aria-hidden="true"/>}
-      <span className="tiny_info__content">{props.content}</span>
+      <span className={styles.content}>{props.content}</span>
     </span>
   );
 }

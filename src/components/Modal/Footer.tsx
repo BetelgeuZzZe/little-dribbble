@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as styles from './styles/Footer.less';
 
 interface IFooterProps {
   userName: string;
@@ -15,32 +16,32 @@ interface IFooterProps {
  */
 export function Footer({avatar, userName, bio, location, name}: IFooterProps) {
   return(
-    <div className="footer">
-      <div className="footer__row">
+    <div className={styles.footer}>
+      <div className={styles.row}>
         <div
-          className="footer__avatar"
+          className={styles.avatar}
         >
           <img
             src={avatar}
             alt="avatar"
           />
         </div>
-        <div className="footer__name">
+        <div className={styles.name}>
           {name}
         </div>
-        <div className="footer__name--small">
+        <div className={styles.name_small}>
           {userName}
         </div>
-        <div className="footer__name--small-relaxed">
+        <div className={styles.name_small_relaxed}>
           {location}
         </div>
-        <div className="footer__twitter_icon"/>
+        <div className={styles.twitter_icon}/>
       </div>
-      <div className="divider">
-        <div className="divider__line"/>
+      <div className={styles.divider}>
+        <div className={styles.divider_line}/>
       </div>
-      <div className="footer__row">
-        <div className="footer__content">
+      <div className={styles.row}>
+        <div className={styles.content}>
           <div dangerouslySetInnerHTML={{__html: bio}}/>
         </div>
       </div>

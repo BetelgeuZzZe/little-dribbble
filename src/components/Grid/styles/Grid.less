@@ -1,0 +1,23 @@
+@import "../../styles/variables";
+
+@gridMax: 1920px;
+@paddingDefault: 15px / 2px;
+@paddingTablet: @paddingDefault * 2px;
+@paddingDesktop: (@paddingTablet + 4px) / 2px;
+
+.grid {
+  .flex(row; center);
+
+  margin: 0 auto;
+  max-width: @gridMax;
+
+  padding: 0 @paddingDefault;
+  .tablet-portrait({ padding: @paddingTablet; });
+  .desktop({ padding: 50px - @paddingDesktop @paddingDesktop; });
+}
+
+.column {
+  padding: @paddingDefault;
+  .tablet-portrait({ padding: @paddingTablet; });
+  .desktop({ padding: @paddingDesktop; });
+}

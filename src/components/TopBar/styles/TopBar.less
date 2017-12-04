@@ -1,0 +1,40 @@
+@import '../../styles/variables';
+
+.topbar {
+  .flex(row);
+  flex-wrap: nowrap;
+  align-items: center;
+  height: @TopBarHeight;
+  padding: 17px 15px;
+  background-color: #282828;
+  .desktop({ justify-content: flex-start; });
+}
+
+.menu {
+  align-content: center;
+  height: 19px;
+  .desktop({ display: none; });
+}
+
+.full_menu {
+  display: none;
+  .desktop({
+    .flex(row);
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+  });
+
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 10px;
+  line-height: 0.7;
+}
+
+.logo {
+  height: 36px;
+}
+
+.item {
+  padding: 10px 20px;
+}

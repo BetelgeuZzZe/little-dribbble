@@ -1,6 +1,7 @@
 import * as React   from 'react';
 import { TinyInfo } from '../TinyInfo/TinyInfo';
 import { Icons }    from '../TinyInfo/Icons';
+import * as styles  from './styles/Card.less';
 
 interface IExtraProps {
   userName: string;
@@ -10,8 +11,8 @@ interface IExtraProps {
 
 export function Extra({userName, likes, views}: IExtraProps) {
   return(
-    <div className="card__info_handler">
-      <div className="card__name">
+    <div className={styles.info_handler}>
+      <div className={styles.name}>
         {userName}
       </div>
       <TinyInfo>

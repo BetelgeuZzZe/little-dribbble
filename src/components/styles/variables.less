@@ -1,0 +1,42 @@
+.mobile(@content) {
+  @media screen and (max-width: 599px) { @content(); }
+};
+.tablet-portrait(@content) {
+  @media screen and (min-width: 600px) { @content(); }
+};
+.tablet-landscape(@content) {
+  @media (min-width: 900px) { @content(); }
+};
+.desktop(@content) {
+  @media (min-width: 1200px) { @content(); }
+};
+.large-screen(@content) {
+  @media (min-width: 1800px) { @content(); }
+};
+.retina(@content) {
+  @media
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) { @content(); }
+};
+
+
+@TopBarHeight: 70px;
+
+/* flex */
+.flex(column; @justify: center) {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: @justify;
+}
+
+.flex(row; @justify: space-between) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: @justify;
+}
+
+/* COLORS */
+@white: #ffffff;
+@black: #000000;

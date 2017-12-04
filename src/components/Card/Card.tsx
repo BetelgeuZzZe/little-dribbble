@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as styles from './styles/Card.less';
 
 import { LabledImage }     from './LabledImage';
 import { Extra }           from './Extra';
@@ -19,7 +20,7 @@ export class Card extends React.PureComponent<ICardProps> {
   render() {
     const { created_at, teaser, title, userName, likes, views } = this.props;
     return(
-      <div className="card" onClick={this.handleCardClick}>
+      <div className={styles.card} onClick={this.handleCardClick}>
         <LabledImage
           title={title}
           created_at={created_at}
