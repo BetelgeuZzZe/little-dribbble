@@ -23,12 +23,6 @@
   .desktop({
     width: 275px;
   });
-
-  &:hover {
-    .hover_label {
-      bottom: 0;
-    }
-  }
 }
 
 .image {
@@ -55,26 +49,43 @@
 }
 
 .image_label {
-  .labels;
   padding: 8px 11px;
+
   font-size: 14px;
   line-height: 0.8;
-  display: inline;
+  color: @white;
+
   position: absolute;
+  display: inline;
+}
+.image_label_backdrop {
+  .labels;
+  .image_label;
+  color: transparent;
 }
 
 .hover_label {
-  .labels;
   padding: 10px 11px;
 
   font-size: 20px;
   font-weight: bold;
   line-height: 1.1;
+  color: @white;
 
   position: absolute;
   left: 0;
   right: 0;
   bottom: -100%;
-  transition: bottom 0.3s ease-out;
+  transition: bottom 0.3s linear;
 }
 
+.hover_label_backdrop {
+  .labels;
+  .hover_label;
+  color: transparent;
+}
+.card:hover {
+  .hover_label, .hover_label_backdrop {
+    bottom: 0;
+  }
+}

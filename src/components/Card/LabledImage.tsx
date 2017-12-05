@@ -9,12 +9,15 @@ interface ILabeledImageProps {
 }
 
 export function LabledImage({created_at, teaser, title}: ILabeledImageProps) {
+  const createdAt = stringifyDate(created_at);
   return(
     <div className={styles.image}>
+      <div className={styles.image_label_backdrop}>{createdAt}</div>
       <div className={styles.image_label}>
-        {stringifyDate(created_at)}
+        {createdAt}
       </div>
       <img src={teaser} alt="preview"/>
+      <div className={styles.hover_label_backdrop}>{title}</div>
       <div className={styles.hover_label}>
         {title}
       </div>
