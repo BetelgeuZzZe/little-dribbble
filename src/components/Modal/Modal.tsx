@@ -16,11 +16,7 @@ interface IModalProps extends IShotsStoreState {
 }
 
 export class Modal extends React.PureComponent<IModalProps> {
-
-  componentDidMount() {
-    window.scrollTo(0, 0);
-  }
-
+  
   render() {
     const { teaser, created_at, likes, views, title, hidpi, description, ...footerProps } = this.props;
     return(
