@@ -1,28 +1,30 @@
 @import "../../styles/variables.less";
 
+@defaultOffset: 15px;
+@modalMaxWidth: 800px;
+
 .modal {
   position: absolute;
+  margin: 0 auto;
+  max-width: @modalMaxWidth;
   background-color: @white;
   box-shadow: 0 0 15.8px 0.2px rgba(0, 0, 0, 0.13);
 
   top: @TopBarHeight/2;
 
   .mobile({
-    left: 15px;
-    right: 15px;
+    left: @defaultOffset;
+    right: @defaultOffset;
   });
 
   .tablet-portrait({
-    margin: 0 auto;
-    left: 30px;
-    right: 30px;
+    left: @defaultOffset * 2;
+    right: @defaultOffset * 2;
   });
 
   .desktop({
-    margin: 0 auto;
     left: 0;
     right: 0;
-    max-width: 880px;
   })
 }
 
@@ -34,6 +36,7 @@
 }
 
 .close {
+  .with-image();
   position: absolute;
   width: 20px;
   height: 20px;
@@ -45,17 +48,12 @@
     right: 3px;
     top: -3px;
   });
-  img {
-    width: 100%;
-  }
 }
 
 .image {
+  .with-image();
   padding: 40px 40px 30px;
   .mobile({ padding: 15px; });
-  img {
-    width: 100%;
-  }
 }
 
 .header {
@@ -78,9 +76,9 @@
   padding: 0 40px 40px;
   .mobile({ padding: 0 15px; });
 
-  &:last-child {
-    padding: 0;
-  }
+  .tablet-portrait({
+    &:last-child { padding: 0; }
+  });
 
   .desktop({
     &:last-child {
