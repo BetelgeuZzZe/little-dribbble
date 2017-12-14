@@ -44,10 +44,10 @@ less не был добавлен в Webpack в качестве лоадера,
 *Стили сделаны в виде css-modules вебак настроен на production\development билд с поддержкой less + css-modules + typescript*
 
 * В ветке redux:
-*Добавлена версия с использованием redux rect-redux redux-thunk*
+*Добавлена версия с использованием redux react-redux redux-thunk*
 
 ## Используемые технологии
 1. Typescript
 2. React
-3. flux (master branch) | redux, redux-thunk (redux branch)
+3. flux (master branch) | redux, react-redux, redux-thunk (redux branch)
 4. less
