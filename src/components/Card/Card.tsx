@@ -16,24 +16,17 @@ export interface ICardProps {
   onClick?(id: string): void;
 }
 
-export class Card extends React.PureComponent<ICardProps> {
-  render() {
-    const { created_at, teaser, title, userName, likes, views } = this.props;
-    return(
-      <div className={styles.card} onClick={this.handleCardClick}>
-        <LabledImage
-          title={title}
-          created_at={created_at}
-          teaser={teaser}
-        />
-        <Extra views={views} likes={likes} userName={userName}/>
-      </div>
-    );
-  }
-
-  private handleCardClick = () => {
-    if (this.props.onClick) {
-      this.props.onClick(this.props.id);
-    }
-  }
+export function Card(props: ICardProps) {
+  const { created_at, teaser, title, userName, likes, views, id } = props;
+  const onClick = props.onClick ? () => props.onClick!(id) : () => ({});
+  return(
+    <div className={styles.card} onClick={onClick}>
+      <LabledImage
+        title={title}
+        created_at={created_at}
+        teaser={teaser}
+      />
+      <Extra views={views} likes={likes} userName={userName}/>
+    </div>
+  );
 }

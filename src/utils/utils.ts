@@ -1,6 +1,6 @@
-import { IShotsStoreState } from '../stores/ShotsStore';
+import { IShot } from '../reducers/shots';
 
-export function fetchShots(page: number = 0) {
+export function getShots(page: number = 0) {
   return new Promise(((resolve, reject) => {
     return fetch(url('shots', page))
       .then((response) => response.json())
@@ -23,7 +23,8 @@ function url(endpoint: string, page: number = 0): string {
   return `${origin}${endpoint}?access_token=${accessToken}&per_page=30&page=${page}`;
 }
 
-function serialize(responses: Array<any>): Array<IShotsStoreState> {
+// tslint:disable-next-line
+function serialize(responses: Array<any>): Array<IShot> {
   return responses.map(({user, images, likes_count, views_count, created_at, title, id, description}) => {
     const {username, location, name, avatar_url, bio} = user;
     const {teaser, hidpi} = images;
@@ -43,4 +44,10 @@ function serialize(responses: Array<any>): Array<IShotsStoreState> {
       id
     };
   });
+}
+
+export function assign<T, P>(state: T) {
+  return function(newPart: Partial<P>) {
+    return Object.assign({}, state, newPart);
+  };
 }
