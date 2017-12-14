@@ -44,7 +44,7 @@ less не был добавлен в Webpack в качестве лоадера,
 *Стили сделаны в виде css-modules вебак настроен на production\development билд с поддержкой less + css-modules + typescript*
 
 * В ветке redux:
-* Добавлена версия с использованием redux rect-redux redux-thunk *
+*Добавлена версия с использованием redux rect-redux redux-thunk*
 
 ## Используемые технологии
 1. Typescript
