@@ -36,11 +36,18 @@ serve -s build
 yarn start
 ```
 *P.S*
+* В ветке мастер:
 *Стили написанны на less но в репозиторий, я поместил их уже странспиленными, никаких действий для их транспиляции не требуется.
 less не был добавлен в Webpack в качестве лоадера, так как не хотелось эджектить скаффолд*
+
+* В ветке css-modules: 
+*Стили сделаны в виде css-modules вебак настроен на production\development билд с поддержкой less + css-modules + typescript*
+
+* В ветке redux:
+* Добавлена версия с использованием redux rect-redux redux-thunk *
 
 ## Используемые технологии
 1. Typescript
 2. React
-3. fbflux
+3. flux (master branch) | redux, redux-thunk (redux branch)
 4. less
